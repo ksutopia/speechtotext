@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+          id="com.phonegap.plugins.speech" version="1.0.0">
+    <name>SpeechToText</name>
+    <description>Plugin to convert speech to text in background</description>
+    <license>MIT</license>
+    <keywords>phonegap,speechtotext</keywords>
+ 
+ 
+    <js-module src="SpeechToText.js" name="SpeechToText">
+        <clobbers target="plugins.speechtotext" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SpeechToText">
+                <param name="android-package" value="com.phonegap.plugins.speech.SpeechToText"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="SpeechToText.java" target-dir="src/com/phonegap/plugins/speech" />      
+        <source-file src="LanguageDetailsChecker.java" target-dir="src/com/phonegap/plugins/speech" />      
+     </platform>          
+</plugin>
